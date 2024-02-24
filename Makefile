@@ -3,7 +3,6 @@ testFiles := $(shell $(findPath) test/ -name '*.cpp')
 engineFiles := $(shell $(findPath) src/ -name '*.cpp') $(shell $(findPath) src/ -name '*.c')
 flags := -Iinclude -Llib -lglfw3 -Wall
 testOutput = main.exe
-buildIntermediateOutput = factory-engine.o
 buildOutput = factory-engine.dll
 
 test: $(testFiles) $(engineFiles)
@@ -16,8 +15,11 @@ run: $(testOutput)
 	./$(testOutput)
 
 build: $(engineFiles)
-	rm -f $(buildIntermediateOutput)
+	mkdir -p temp
+	rm -f temp/*
 	rm -f $(buildOutput)
-	g++ -c $(engineFiles) $(flags) -o $(buildIntermediateOutput) -DBUILD_LIB
-	g++ -shared -o $(buildOutput) $(buildIntermediateOutput)
+	g++ -c $(engineFiles) $(flags) -DBUILD_LIB
+	mv *.o temp
+	g++ -shared -o $(buildOutput) temp/*.o
+	rm -rf temp
 
