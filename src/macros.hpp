@@ -1,3 +1,6 @@
+#ifndef FE_MACRO_HPP
+#define FE_MACRO_HPP
+
 #ifdef __WIN32__
 
 #ifdef BUILD_LIB
@@ -9,5 +12,7 @@
 #else
 
 #define DLL_EXPORT
+
+#endif
 
 #endif

@@ -5,11 +5,10 @@ testOutput = main.exe
 buildOutput = factory-engine.dll
 
 test: $(testFiles) $(engineFiles)
-	make build
+	make build -s
 	rm -f $(testOutput)
 	g++ $(testFiles) $(flags) factory-engine.dll -o $(testOutput)
-	clear
-	@./$(testOutput)
+	./$(testOutput)
 
 run: $(testOutput)
 	./$(testOutput)
