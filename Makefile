@@ -1,6 +1,6 @@
 findPath := C:/msys64/usr/bin/find
 testFiles := $(shell $(findPath) test/ -name '*.cpp')
-engineFiles := $(shell $(findPath) src/ -name '*.cpp')
+engineFiles := $(shell $(findPath) src/ -name '*.cpp') $(shell $(findPath) src/ -name '*.c')
 flags := -Iinclude -Llib -lglfw3 -Wall
 testOutput = main.exe
 buildIntermediateOutput = factory-engine.o

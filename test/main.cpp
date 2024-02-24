@@ -8,5 +8,5 @@ int main() {
 
     v1.normalize();
 
-    std::cout << v1.x << " " << v1.y << std::endl;
+    std::cout << v1.toString() << std::endl;
 }
