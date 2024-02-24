@@ -4,7 +4,7 @@
 #ifndef FE_VEC2_HPP
 #define FE_VEC2_HPP
 
-template <class T> DLL_EXPORT class Vec2 {
+template <class T> class DLL_EXPORT Vec2 {
     public:
         T x, y;
 
