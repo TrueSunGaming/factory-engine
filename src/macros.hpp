@@ -1,5 +1,4 @@
-#ifndef FE_MACRO_HPP
-#define FE_MACRO_HPP
+#pragma once
 
 #ifdef __WIN32__
 
@@ -12,7 +11,5 @@
 #else
 
 #define DLL_EXPORT
-
-#endif
 
 #endif
